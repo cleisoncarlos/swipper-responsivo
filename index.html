@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swiper Responsivo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
+
+
+
+    <style>
+ 
+        .swiper {
+            width: 90%;
+            max-width: 1200px;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .swiper-slide img {
+            width: 100%;
+            height: auto;
+            
+        }
+
+        /* Personalizando botões */
+        .swiper-button-prev, .swiper-button-next {
+            color: white;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+          
+          
+        }
+
+
+        .swiper-pagination-bullet {
+    background-color: gray; /* Cor padrão */
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+}
+
+/* Cor da bolinha ativa */
+.swiper-pagination-bullet-active {
+    background-color: red; /* Muda para vermelho */
+}
+
+
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .swiper-button-prev, .swiper-button-next {
+                width: 30px;
+                height: 30px;
+                padding: 10px;
+            }
+        }
+    </style>
+
+
+
+</head>
+<body>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="google.com">
+                    <img src="https://picsum.photos/600/300" alt="Imagem 1">
+                </a>
+            </div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=1" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=2" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=3" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=4" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=5" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=6" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=7" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=8" alt="Imagem 1"></div>
+            <div class="swiper-slide"><img src="https://picsum.photos/600/300?random=9" alt="Imagem 1"></div>
+
+        </div>
+
+        <!-- Botões de navegação -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- Paginação -->
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        new Swiper(".swiper", {
+            loop: true,
+            autoplay: {
+                delay: 3000, // 3 segundos
+                disableOnInteraction: false, 
+            },
+            spaceBetween: 10, // Espaço entre os slides
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                320: { slidesPerView: 1 },  // 1 slide em telas pequenas
+                640: { slidesPerView: 2 },  // 2 slides em tablets
+                1024: { slidesPerView: 3 }  // 3 slides no desktop
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
